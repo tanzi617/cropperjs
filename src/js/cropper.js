@@ -36,7 +36,6 @@ import {
   isFunction,
   isPlainObject,
   parseOrientation,
-  proxy,
   removeClass,
   removeListener,
   setData,
@@ -212,8 +211,8 @@ class Cropper {
 
     image.src = crossOriginUrl || url;
 
-    const start = proxy(this.start, this);
-    const stop = proxy(this.stop, this);
+    const start = this.start.bind(this);
+    const stop = this.stop.bind(this);
 
     this.image = image;
     this.onStart = start;

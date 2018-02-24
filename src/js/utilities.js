@@ -116,16 +116,6 @@ export function extend(obj, ...args) {
   return obj;
 }
 
-/**
- * Takes a function and returns a new one that will always have a particular context.
- * @param {Function} fn - The target function.
- * @param {Object} context - The new context for the function.
- * @returns {boolean} The new function.
- */
-export function proxy(fn, context, ...args) {
-  return (...args2) => fn.apply(context, args.concat(args2));
-}
-
 const REGEXP_DECIMALS = /\.\d*(?:0|9){12}\d*$/i;
 
 /**
